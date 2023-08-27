@@ -5,7 +5,7 @@ import { ResultsDropdown } from './';
 import { SearchIcon } from '../assets'; 
 
 const ChannelSearch = ({ setToggleContainer }) => {
-    const { client, setActiveChannel } = useChatContext (); 
+    const { client, setActiveChannel } = useChatContext(); 
     const [query, setQuery]= useState('');
     const [loading, setLoading] = useState(false);
     const [teamChannels, setTeamChannels] = useState([])

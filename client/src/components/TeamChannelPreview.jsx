@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Avatar, useChatContext } from 'stream-chat-react';
 
@@ -7,7 +6,7 @@ const TeamChannelPreview = ({ setActiveChannel, setIsCreating, setIsEditing, set
 
     const ChannelPreview = () => (
         <p className="channel-preview__item">
-            # {channel?.data?.name || channel?.data?.id}
+            {channel?.data?.name ? `# ${channel.data.name}` : '#Unnamed Channel'}
         </p>
     );
 

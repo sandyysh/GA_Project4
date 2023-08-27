@@ -193,7 +193,7 @@
   .app__wrapper {
     display: flex;
     flex: 1;
-    /* height: 800px; */
+    width: 100%;
     height: 100%;
     /* border-radius: 16px; */
     box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 4px 0px;
@@ -226,7 +226,7 @@
   }
   
   @media screen and (max-width: 960px) {
-    .str-chat-channel-list.team.light {
+    .str-chat-channel-list.team {
       position: unset;
       left: unset;
       top: unset;
@@ -578,7 +578,7 @@
   .create-channel__container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100%
   }
   
   .create-channel__header {
@@ -939,6 +939,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    background: #006bff;
   }
   
   .team-channel-list__message {

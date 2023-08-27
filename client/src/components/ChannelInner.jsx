@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MessageList, MessageInput, Thread, Window, useChannelActionContext, Avatar, useChannelStateContext, useChatContext } from 'stream-chat-react';
 
@@ -11,6 +10,7 @@ const ChannelInner = ({ setIsEditing }) => {
   const { sendMessage } = useChannelActionContext();
   
   const overrideSubmitHandler = (message) => {
+    console.log("override submit")
     let updatedMessage = {
       attachments: message.attachments,
       mentioned_users: message.mentioned_users,
@@ -18,7 +18,7 @@ const ChannelInner = ({ setIsEditing }) => {
       parent: message.parent,
       text: message.text,
     };
-    
+    // backend api not called
     if (giphyState) {
       updatedMessage = { ...updatedMessage, text: `/giphy ${message.text}` };
     }
@@ -69,9 +69,9 @@ const TeamChannelHeader = ({ setIsEditing }) => {
       return (
         <div className='team-channel-header__channel-wrapper'>
           <p className='team-channel-header__name'># {channel.data.name}</p>
-          <span style={{ display: 'flex' }} onClick={() => setIsEditing(true)}>
-            <ChannelInfo />
-          </span>
+           <span style={{ display: 'flex' }} onClick={() => setIsEditing(true)}> 
+            <ChannelInfo /> 
+          </span> 
         </div>
       );
     };
@@ -90,6 +90,7 @@ const TeamChannelHeader = ({ setIsEditing }) => {
         </div>
       </div>
     );
+
   };
 
   export default ChannelInner;

@@ -4,18 +4,19 @@ import { Channel, MessageSimple } from 'stream-chat-react';
 import  { ChannelInner, CreateChannel, EditChannel } from './';
 
 const ChannelContainer = ({isCreating, setIsCreating, isEditing, setIsEditing, createType }) => {
-
+    //alert(isCreating);
     if (isCreating) {
         return(
-            <div className="channel_container">
+            <div className="channel__container">
                 <CreateChannel createType={createType} setIsCreating={setIsCreating}/>
             </div>
         )
     }
-    
+    //alert(isEditing);
      if (isEditing) {
+        console.log("editing")
         return(
-            <div className="channel_container">
+            <div className="channel__container">
                 <EditChannel setIsEditing={setIsEditing}/>
             </div>
         )
